@@ -143,6 +143,7 @@ input {
     h1 {
         font-size: 3.0rem;
     }
+}
 
 @media (min-width: 1200px) {
     body {
@@ -155,7 +156,5 @@ input {
 
     .item-content {
         width: 60%;
-        width: 60%;
     }
 }
-
