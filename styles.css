@@ -20,8 +20,12 @@ h1 {
     color: blue;
 }
 
-.accordion:hover {
-    cursor: pointer;
+.accordion:hover .finish {
+    opacity: 1;
+}
+
+.accordion:hover .row {
+    color: #000;
 }
 
 .accordion-item {
@@ -29,6 +33,37 @@ h1 {
     border-top: 1px solid #000;
     width: 100%;
     text-align: center;
+    cursor: pointer;
+}
+
+.item-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.item-label.finish {
+    width: 1em;
+    height: 1em;
+    transition: 0.5s;
+}
+
+.item-label:hover .item-content {
+    max-height: 100vh;
+}
+
+input:checked + .row {
+    color: #000;
+}
+
+input:checked + .row .finish {
+    transform: rotate(45deg);
+}
+
+input:checked ~ .item-content {
+    max-height: 100vh;
+    padding: 20 0 0 0;
 }
 
 input {
@@ -36,34 +71,32 @@ input {
     opacity: 1;
 }
 
-.item-label {
+.row {
     display: flex;
     justify-content: space-between;
 }
 
-.item-label::after {
-    content: "\002B";
-    width: 1em;
-    height: 1em;
-    transition: 0.5s;
-}
-
-input:checked + .item-label {
-    color: #000;
-}
-
-input:checked + .item-label::after {
-    transform: rotate(90deg);
-}
-input:checked ~ .item-content {
-    max-height: 100vh;
+.finish {
+    opacity: 0;
 }
 
 .item-content {
     width: 270px;
     object-fit: contain;
     max-height: 0;
-    transition: 1s;
-    padding: 20px 0 0 0;
+    transition: 0.5s;
+    padding: 0 0 0 0;
+}
+
+@media (min-width: 720px) {
+    .item-content {
+        width: 570px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .item-content {
+        width: 870px;
+    }
 }
 
