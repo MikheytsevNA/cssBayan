@@ -1,16 +1,18 @@
 body {
     background-color: #fff;
     box-sizing: border-box;
-    margin: 20px 0 20px 0;
+    margin: 5% 0 5% 0;
+    font-size: 10px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    padding: 0 20px 0 20px;
+    padding: 0 5% 0 5%;
 }
 
 h1 {
+    font-size: 20px;
     margin: 0 0 0 0;
 }
 
@@ -43,14 +45,12 @@ h1 {
     cursor: pointer;
 }
 
-.item-label.finish {
-    width: 1em;
-    height: 1em;
-    transition: 0.5s;
-}
-
 .item-label:hover .item-content {
     max-height: 100vh;
+}
+
+.item-label:hover .row .finish {
+    transform: rotate(45deg);
 }
 
 input:checked + .row {
@@ -76,27 +76,50 @@ input {
     justify-content: space-between;
 }
 
+.start {
+    padding: 0 0 0 5%;
+}
+
 .finish {
+    width: 1em;
+    height: 1em;
     opacity: 0;
+    transition: 0.5s;
 }
 
 .item-content {
-    width: 270px;
+    width: 90%;
     object-fit: contain;
+    align-self: center;
     max-height: 0;
     transition: 0.5s;
     padding: 0 0 0 0;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 600px) {
+    body {
+        font-size: 1.3rem;
+    }
+
+    h1 {
+        font-size: 2.0rem;
+    }
     .item-content {
-        width: 570px;
+        width: 75%;
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
+    body {
+        font-size: 2.0rem;
+    }
+
+    h1 {
+        font-size: 3.0rem;
+    }
+
     .item-content {
-        width: 870px;
+        width: 60%;
     }
 }
 
